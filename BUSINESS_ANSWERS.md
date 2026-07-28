@@ -1,6 +1,6 @@
 # Business Answers
 
-Candidate name: Sidhaartha Kumar malla
+Candidate name: Sidhartha Kumar malla
 
 Date: 2026-07-27
 
