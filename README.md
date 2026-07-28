@@ -27,7 +27,7 @@ A Streamlit-based analytics dashboard analyzing ~5,000 shipment records to ident
 ```bash
 # Clone the repo
 git clone https://github.com/SidharthaKumarMalla/FreightFox.git
-cd freightfox-analytics
+cd freightfox
 
 # Install dependencies
 pip install -r requirements.txt
