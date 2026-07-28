@@ -11,7 +11,7 @@ A Streamlit-based analytics dashboard analyzing ~5,000 shipment records to ident
 | # | Deliverable | Location |
 |---|------------|----------|
 | 1 | Source Code | This repo |
-| 2 | Live Dashboard | [Streamlit Cloud URL] |
+| 2 | Live Dashboard | [https://freightfox1.streamlit.app/] |
 | 3 | README | This file |
 | 4 | Business Answers | [`BUSINESS_ANSWERS.md`](./BUSINESS_ANSWERS.md) |
 | 5 | Screen Recording | [Loom link] |
