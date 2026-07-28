@@ -4,7 +4,7 @@ A Streamlit-based analytics dashboard analyzing ~5,000 shipment records to ident
 
 ## 🚀 Live Dashboard
 
-**[→ View Live Dashboard](https://freightfox-analytics.streamlit.app)** *(update with your actual URL after deployment)*
+**[→ View Live Dashboard](https://freightfox1.streamlit.app/)** 
 
 ## 📋 Deliverables
 
