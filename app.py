@@ -950,9 +950,7 @@ with tab2:
         region_table = region_data[["shipment_id", "carrier_id", "mode", "customer_id",
                                      "promised_delivery_date", "actual_delivery_date",
                                      "delay_days", "freight_cost", "distance_km"]].sort_values("delay_days", ascending=False)
-        st.dataframe(region_table.style.format({
-            "freight_cost": "₹{:,.0f}", "distance_km": "{:,} km", "delay_days": "{:+.0f}",
-        }).background_gradient(subset=["delay_days"], cmap="RdYlGn_r"),
+        st.dataframe(region_table,
             use_container_width=True, height=400)
         st.download_button(f"⬇️ Download {selected_region} Data",
             data=region_table.to_csv(index=False).encode("utf-8"),
@@ -1040,10 +1038,7 @@ with tab3:
     ).reset_index().sort_values("avg_deviation_pct", ascending=False)
     cost_table.columns = ["Carrier", "Shipments", "Avg Cost (₹)", "Median Cost (₹)", "Avg Distance (km)", "Avg ₹/km", "Avg Deviation %"]
 
-    st.dataframe(cost_table.style.format({
-        "Avg Cost (₹)": "₹{:,.0f}", "Median Cost (₹)": "₹{:,.0f}", "Avg Distance (km)": "{:,.0f}",
-        "Avg ₹/km": "₹{:.1f}", "Avg Deviation %": "{:+.1f}%",
-    }).background_gradient(subset=["Avg Deviation %"], cmap="RdYlGn_r"),
+    st.dataframe(cost_table,
         use_container_width=True, height=560)
 
 
@@ -1141,9 +1136,7 @@ with tab4:
         detail = cust_data[["shipment_id", "region", "carrier_id", "mode",
             "promised_delivery_date", "actual_delivery_date", "delay_days", "freight_cost", "distance_km"
         ]].sort_values("delay_days", ascending=False)
-        st.dataframe(detail.style.format({
-            "freight_cost": "₹{:,.0f}", "distance_km": "{:,} km", "delay_days": "{:+.0f}",
-        }).background_gradient(subset=["delay_days"], cmap="RdYlGn_r"),
+        st.dataframe(detail,
             use_container_width=True, height=400)
 
 
