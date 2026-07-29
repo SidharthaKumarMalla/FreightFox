@@ -4,14 +4,14 @@ A Streamlit-based analytics dashboard analyzing ~5,000 shipment records to ident
 
 ## 🚀 Live Dashboard
 
-**[→ View Live Dashboard](https://freightfox1.streamlit.app/)** 
+**[→ View Live Dashboard](https://skm-freightfox-shipment-analytics.streamlit.app/)** 
 
 ## 📋 Deliverables
 
 | # | Deliverable | Location |
 |---|------------|----------|
 | 1 | Source Code | This repo |
-| 2 | Live Dashboard | [https://freightfox1.streamlit.app/] |
+| 2 | Live Dashboard | [https://skm-freightfox-shipment-analytics.streamlit.app/] |
 | 3 | README | This file |
 | 4 | Business Answers | [`BUSINESS_ANSWERS.md`](./BUSINESS_ANSWERS.md) |
 | 5 | Screen Recording | [Loom Link](https://www.loom.com/share/c5413c6cdbcd420d9de1ec5aa16003d6) |
