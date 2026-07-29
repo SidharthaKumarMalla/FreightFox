@@ -66,7 +66,15 @@ WHERE  actual_delivery_date IS NOT NULL
 GROUP  BY region, carrier_id
 ORDER  BY late_pct DESC;
 ```
+**Business Reasoning:**
 
+The results indicate that the problem is concentrated around specific carriers rather than the entire logistics network. Since all transport modes have similar late-delivery percentages, changing transport modes is unlikely to improve performance. The primary focus should be on improving carrier performance in the Central region.
+
+**Recommendation:**
+
+- Review the operational performance of CARR_08 and CARR_02 in the Central region.
+- Monitor these carriers weekly using on-time delivery KPIs.
+- Consider reallocating shipments to better-performing carriers if poor performance continues.
 ---
 
 ## Q2. Is there a relationship between freight cost and distance? Which carrier(s) deviate, and by how much?
@@ -130,7 +138,14 @@ WHERE  distance_km > 0
 GROUP  BY carrier_id
 ORDER  BY avg_deviation_pct DESC;
 ```
+**Business Reasoning:**
 
+Distance alone does not explain freight cost. The consistently higher pricing of CARR_07 suggests that it may represent a premium or specialized logistics service rather than a pricing error.
+
+**Recommendation:**
+
+- Validate whether CARR_07's higher pricing is justified through premium services or better SLAs.
+- If there is no business justification, review pricing agreements or shift shipments to more cost-effective carriers.
 ---
 
 ## Q3. Which customer(s) are experiencing the most delivery delays? Carrier-driven, region-driven, or something else?
@@ -212,7 +227,15 @@ WHERE  actual_delivery_date IS NOT NULL
 GROUP  BY customer_id, region
 ORDER  BY customer_id, late_pct DESC;
 ```
+**Business Reasoning:**
 
+Since delays are spread across multiple carriers and regions, the issue appears to be customer-specific rather than carrier-specific. Operational constraints such as delivery locations, scheduling requirements, or shipment characteristics are likely contributing to the higher delay rates.
+
+**Recommendation:**
+
+- Perform customer-level operational reviews for these accounts.
+- Investigate delivery locations and scheduling constraints.
+- Improve proactive communication for customers experiencing repeated delays.
 ---
 
 ## Q4. What data quality issues did you find, and how did you handle them?
@@ -251,6 +274,15 @@ I found **8 data quality issues**, ranked by severity:
 8. **South Region Under-represented**: Only 126 delivered-with-actual-date records vs 830+ for other regions.
    - *Handling*: Noted as a caveat; South's performance stats should be interpreted with caution.
 
+**Business Reasoning:**
+
+Reliable analytics depend on reliable data. Duplicate shipment IDs, missing delivery dates, and inconsistent shipment statuses can distort KPIs and lead to incorrect business decisions if not addressed.
+
+**Recommendation:**
+
+- Implement automated data validation before reporting.
+- Add duplicate detection and mandatory delivery-date validation.
+- Enforce consistency checks between shipment status and delivery dates.
 ---
 
 ## Q5. If you could track exactly one metric weekly to catch delivery problems early, what would it be and why?
